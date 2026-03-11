@@ -132,191 +132,54 @@ body {
   letter-spacing: 2px;
 }
 
-/* ── Charizard Card ── */
-.charizard-card {
-  position: relative;
-  background: linear-gradient(160deg, #ff6a00, #ee0979, #ff4500);
-  border: 3px solid #8b1a00;
-  border-radius: 16px;
-  width: 280px;
-  padding: 16px;
-  overflow: hidden;
-  box-shadow:
-    0 8px 24px rgba(255, 80, 0, 0.5),
-    0 0 60px rgba(255, 60, 0, 0.2),
-    inset 0 1px 0 rgba(255, 200, 100, 0.3);
+.charizard {
+  background: linear-gradient(160deg, #ff6a00, #cc3300, #ff4500);
+  border-color: #8b1a00;
 }
 
-/* Shimmer de borde ígneo */
-.charizard-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 220, 80, 0.4) 0%,
-    transparent 40%,
-    rgba(255, 100, 0, 0.3) 70%,
-    transparent 100%
-  );
-  pointer-events: none;
-}
-
-/* ── Llamas decorativas ── */
-.flame {
-  position: absolute;
-  border-radius: 50% 50% 20% 20%;
-  filter: blur(14px);
-  opacity: 0.35;
-  animation: flicker 2.5s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-.flame-1 { width: 70px; height: 100px; background: #ffcc00; top: -20px; left: 20px; animation-delay: 0s; }
-.flame-2 { width: 50px; height: 80px;  background: #ff4500; top: -10px; right: 30px; animation-delay: 0.8s; }
-.flame-3 { width: 60px; height: 60px;  background: #ff8c00; bottom: 30px; right: -10px; animation-delay: 1.6s; }
-
-@keyframes flicker {
-  0%, 100% { transform: scaleY(1) skewX(0deg);   opacity: 0.35; }
-  33%       { transform: scaleY(1.1) skewX(3deg);  opacity: 0.5; }
-  66%       { transform: scaleY(0.9) skewX(-2deg); opacity: 0.3; }
-}
-
-/* Todo el contenido sobre las llamas */
-.charizard-card > *:not(.flame) {
-  position: relative;
-  z-index: 1;
-}
-
-/* ── Header ── */
-.charizard-card .card-name {
-  font-size: 20px;
-  font-weight: bold;
+.charizard .card-name {
   color: #fff5e0;
-  text-shadow: 0 0 10px #ff4500, 0 2px 4px rgba(0,0,0,0.4);
 }
 
-.charizard-card .card-hp {
-  font-size: 14px;
-  font-weight: bold;
+.charizard .card-hp {
   color: #ffe066;
-  text-shadow: 0 0 8px #ff8c00;
 }
 
-/* ── Image Container ── */
-.charizard-card .card-image-container {
-  position: relative;
-  background: radial-gradient(ellipse at center, #3a0a00 0%, #1a0500 100%);
-  border: 2px solid #8b1a0088;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 180px;
-  margin-bottom: 10px;
-  overflow: hidden;
+.charizard .card-image-container {
+  background-color: #2a0a00;
+  border-color: #8b1a00;
 }
 
-.fire-glow {
-  position: absolute;
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse, #ff450044 0%, transparent 70%);
-  animation: firePulse 2s ease-in-out infinite;
-}
-
-@keyframes firePulse {
-  0%, 100% { transform: scale(1);    opacity: 0.7; }
-  50%       { transform: scale(1.25); opacity: 1;   }
-}
-
-.charizard-card .card-image {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-  filter:
-    drop-shadow(0 0 16px #ff4500cc)
-    drop-shadow(0 0 6px #ffcc00);
-  z-index: 1;
-}
-
-/* ── Type Badges ── */
-.charizard-card .card-type {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.charizard-card .type-badge {
-  background: linear-gradient(135deg, #8b1a00, #cc3300);
-  border: 1px solid #ff6a0088;
-  border-radius: 20px;
-  padding: 3px 10px;
-  font-size: 11px;
-  font-weight: bold;
+.charizard .type-badge {
+  background-color: #cc3300;
+  border-color: #8b1a00;
   color: #ffd580;
-  text-shadow: 0 0 6px #ff4500;
-  box-shadow: 0 0 8px #ff450033;
 }
 
-/* ── Description ── */
-.charizard-card .card-description {
-  background-color: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 100, 0, 0.25);
-  border-radius: 8px;
-  padding: 8px;
-  margin-bottom: 12px;
-}
-
-.charizard-card .card-text {
-  font-size: 11px;
-  color: #ffe0c0;
-  line-height: 1.5;
-  text-align: justify;
-}
-
-/* ── Stats ── */
-.charizard-card .card-stats {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 12px;
+.charizard .card-description {
   background-color: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 100, 0, 0.2);
-  border-radius: 8px;
-  padding: 8px 4px;
 }
 
-.charizard-card .stat-label {
-  font-size: 10px;
+.charizard .card-text {
+  color: #ffe0c0;
+}
+
+.charizard .card-stats {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.charizard .stat-label {
   color: #ffaa66;
 }
 
-.charizard-card .stat-value {
-  font-size: 16px;
-  font-weight: bold;
+.charizard .stat-value {
   color: #fff5e0;
-  text-shadow: 0 0 8px #ff450099;
 }
 
-/* ── Footer ── */
-.charizard-card .card-number {
-  font-size: 12px;
+.charizard .card-number {
   color: #cc6633;
 }
 
-.charizard-card .card-rarity {
-  font-size: 14px;
+.charizard .card-rarity {
   color: #ffcc00;
-  letter-spacing: 2px;
-  text-shadow: 0 0 8px #ff8c00aa;
-  animation: rarityGlow 2s ease-in-out infinite;
-}
-
-@keyframes rarityGlow {
-  0%, 100% { text-shadow: 0 0 8px #ff8c00aa; }
-  50%       { text-shadow: 0 0 18px #ffcc00, 0 0 30px #ff4500; }
 }
